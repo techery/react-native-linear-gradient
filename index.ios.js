@@ -2,8 +2,9 @@
  * @providesModule LinearGradient
  * @flow
  */
-import React, { Component, PropTypes } from 'react';
-import { processColor, requireNativeComponent, PointPropType, View } from 'react-native';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { processColor, requireNativeComponent, PointPropType, View, ViewPropTypes } from 'react-native';
 const deprecatedPropType = require('react-native/Libraries/Utilities/deprecatedPropType.js');
 
 const convertPoint = (name, point) => {
@@ -46,7 +47,7 @@ export default class LinearGradient extends Component {
     ]),
     colors: PropTypes.arrayOf(PropTypes.string).isRequired,
     locations: PropTypes.arrayOf(PropTypes.number),
-    ...View.propTypes,
+    ...ViewPropTypes,
   };
   props: PropsType;
   gradientRef: any;
